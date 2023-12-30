@@ -50,5 +50,6 @@
     "python.defaultInterpreterPath": "./venv/bin/python",
     "python.analysis.typeCheckingMode": "basic",
     "cSpell.enabled": true,
-    "python.formatting.provider": "none"
+    "python.formatting.provider": "none",
+    "python.analysis.autoImportCompletions": true
   }
