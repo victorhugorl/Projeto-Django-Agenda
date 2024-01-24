@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
+from django.shortcuts import render, get_object_or_404, redirect
 from contact.models import Contact
 
 
@@ -71,7 +71,7 @@ def search(request):
 
 
     context = {
-        'page_obj': page_obj,
+        'page_objer': page_obj,
         'site_title': 'Contatos'
     }
 
