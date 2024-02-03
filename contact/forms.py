@@ -1,8 +1,17 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from contact.models import Contact
+from django.contrib.auth.forms import UserCreationForm 
 
 class ContactForm(forms.ModelForm):
+
+    picture = forms.ImageField(
+        widget=forms.FileInput(
+            attrs={
+                'accept': 'image/*'
+            }
+        )
+    )
     first_name = forms.CharField(
         widget=forms.TextInput(
             attrs = {
@@ -24,6 +33,7 @@ class ContactForm(forms.ModelForm):
         fields = (
             'first_name', 'last_name', 'phone',
             'email', 'description', 'category',
+            'picture',
         )
 
     #    widgets = {
@@ -66,3 +76,6 @@ class ContactForm(forms.ModelForm):
             )
 
         return first_name
+
+class RegisterForm(UserCreationForm):
+    ... 
